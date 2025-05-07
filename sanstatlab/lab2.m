@@ -48,8 +48,8 @@ hist_density(x, 40)
 hold on
 
 % ML- och MK-skattningar (byt ut med dina faktiska formler)
-my_est_ml = sqrt(mean(x.^2)/2);   % Exempel på ML-skattning för Rayleigh
-my_est_mk = sqrt(2/pi) * mean(x); % Exempel på MK-skattning
+my_est_mk = mean(x) * sqrt(2/pi);
+my_est_ml = sqrt(sum(x.^2) / (2 * length(x)));
 
 % Rita ut skattningarna och det sanna värdet
 plot(my_est_ml, 0, 'r*', 'DisplayName', 'ML-skattning')
